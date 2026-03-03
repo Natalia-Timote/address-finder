@@ -3,3 +3,9 @@
     flex-direction: column;
     gap: 16px;
 }
+
+.adress-logo {
+    margin: 0 auto;
+    width: 160px;
+    height: 160px;
+}
