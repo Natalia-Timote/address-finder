@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import SearchSelector from './components/SearchSelector';
 
 function App() {
   const [screen, setScreen] = useState('cep');
@@ -98,11 +99,7 @@ function App() {
 
   return (
     <main>
-      <section className='select-search'>
-        <h1>Adress Finder</h1>
-        <button onClick={() => chooseScreen('cep')}>Buscar com CEP</button>
-        <button onClick={() => chooseScreen('logradouro')}>Buscar com logradouro</button>
-      </section>
+      <SearchSelector onChangeScreen={chooseScreen} />
 
       {screen === 'cep' && (
         <section className='cep'>

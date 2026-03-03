@@ -15,12 +15,6 @@ main {
     align-items: center;
 }
 
-.select-search {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
 button {
     padding: 8px 16px;
     border-radius: 16px;
