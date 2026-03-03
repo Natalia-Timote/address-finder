@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import SearchSelector from './components/SearchSelector';
+import CepSearch from './components/CepSearch';
+import LogradouroSearch from './components/LogradouroSearch';
 
 function App() {
   const [screen, setScreen] = useState('cep');
@@ -101,68 +103,29 @@ function App() {
     <main>
       <SearchSelector onChangeScreen={chooseScreen} />
 
-      {screen === 'cep' && (
-        <section className='cep'>
-          <h2>Buscar endereço via CEP</h2>
-          <input type="text" placeholder='Insira o CEP' value={cep} onBlur={handleSearchCep} onChange={(e) => setCep(e.target.value)} />
-          <button className='button-search' onClick={handleSearchCep}>Buscar</button>
+      {screen === 'cep' &&
+        <CepSearch
+          cep={cep}
+          setCep={setCep}
+          handleSearchCep={handleSearchCep}
+          adress={adress}
+          error={error}
+          loading={loading}
+        />
+      }
 
-          <div className='results'>
-            {adress && (
-              <div className='result'>
-                <p>Endereço: {adress.logradouro}</p>
-                <p>Bairro: {adress.bairro}</p>
-                <p>Cidade: {adress.localidade}</p>
-                <p>Estado: {adress.uf}</p>
-              </div>
-            )}
-          </div>
-
-          {error && <p className='error'>{error}</p>}
-          {loading && <p>Carregando...</p>}
-        </section>
-      )}
-
-      {screen === 'logradouro' && (
-        <section className='logradouro'>
-          <h2>Buscar CEP via logradouro</h2>
-          <input type="text" placeholder='Insira o logradouro' value={logradouro} onChange={(e) => setLogradouro(e.target.value)} />
-          <button className='button-search' onClick={handleSearchLogradouro}>Buscar</button>
-
-          <div className='results'>
-            {selectedCep && (
-              <div className='selected'>
-                <p>CEP: {selectedCep.cep}</p>
-                <p>Endereço: {selectedCep.logradouro}</p>
-                <p>Bairro: {selectedCep.bairro}</p>
-                <p>Cidade: {selectedCep.localidade}</p>
-                <p>Estado: {selectedCep.uf}</p>
-              </div>
-            )}
-          </div>
-
-          {results && (
-            <div className='results'>
-              <p>Resultados para Florianópolis - SC</p>
-              {results.map((item) => {
-                return (
-                  <div className={`result ${selectedCep?.cep === item.cep ? 'selected' : ''}`} key={item.cep} onClick={() => setSelectedCep(item)}>
-                    <p>CEP: {item.cep}</p>
-                    <p>Endereço: {item.logradouro}</p>
-                    <p>Bairro: {item.bairro}</p>
-                    <p>Cidade: {item.localidade}</p>
-                    <p>Estado: {item.uf}</p>
-                  </div>
-                )
-
-              })}
-            </div>
-          )}
-
-          {error && <p className='error'>{error}</p>}
-          {loading && <p>Carregando...</p>}
-        </section>
-      )}
+      {screen === 'logradouro' &&
+        <LogradouroSearch
+          logradouro={logradouro}
+          setLogradouro={setLogradouro}
+          handleSearchLogradouro={handleSearchLogradouro}
+          results={results}
+          selectedCep={selectedCep}
+          setSelectedCep={setSelectedCep}
+          error={error}
+          loading={loading}
+        />
+      }
     </main>
   )
 }
