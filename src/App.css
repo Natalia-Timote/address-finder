@@ -15,31 +15,6 @@ main {
     align-items: center;
 }
 
-button {
-    padding: 8px 16px;
-    border-radius: 16px;
-    border: none;
-    background-color: #2563EB;
-    color: #fff;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #1D4ED8;
-}
-
-.button-search {
-    border-radius: 0 16px 16px 0;
-    border: solid 1px #1D4ED8;
-}
-
-input {
-    border: solid 1px #64748B;
-    border-radius: 16px 0 0 16px;
-    padding: 8px 16px;
-    color: #64748B;
-}
-
 .results {
     margin: 40px;
     display: flex;

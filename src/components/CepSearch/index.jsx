@@ -1,3 +1,5 @@
+import Button from '../Button';
+import Input from '../Input';
 import './CepSearch.style.css';
 
 export default function CepSearch({ cep, setCep, handleSearchCep, adress, error, setError, loading }) {
@@ -8,15 +10,14 @@ export default function CepSearch({ cep, setCep, handleSearchCep, adress, error,
                 e.preventDefault();
                 handleSearchCep();
             }}>
-                <input
-                    type="text"
+                <Input
                     placeholder='Insira o CEP'
                     value={cep}
                     onChange={(e) => {
                         setCep(e.target.value);
                         setError('');
                     }} />
-                <button className='button-search' type='submit' disabled={loading}>Buscar</button>
+                <Button className='button-search' type='submit' disabled={loading}>Buscar</Button>
             </form>
 
             <div className='results'>

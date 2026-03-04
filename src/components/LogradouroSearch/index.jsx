@@ -1,3 +1,5 @@
+import Button from '../Button';
+import Input from '../Input';
 import './LogradouroSearch.style.css';
 
 export default function LogradouroSearch({ logradouro, setLogradouro, handleSearchLogradouro, results, selectedCep, setSelectedCep, error, setError, loading }) {
@@ -8,8 +10,7 @@ export default function LogradouroSearch({ logradouro, setLogradouro, handleSear
         e.preventDefault();
         handleSearchLogradouro();
       }}>
-        <input
-          type="text"
+        <Input
           placeholder='Insira o logradouro'
           value={logradouro}
           onChange={(e) => {
@@ -17,7 +18,7 @@ export default function LogradouroSearch({ logradouro, setLogradouro, handleSear
             setError('');
           }}
         />
-        <button className='button-search' type='submit' disabled={loading}>Buscar</button>
+        <Button className='button-search' type='submit' disabled={loading}>Buscar</Button>
       </form>
 
       <div className='results'>
