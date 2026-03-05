@@ -3,6 +3,7 @@ import './App.css'
 import SearchSelector from './components/SearchSelector';
 import CepSearch from './components/CepSearch';
 import LogradouroSearch from './components/LogradouroSearch';
+import { getCep, getLogradouro } from './services/viacep.service';
 
 function App() {
   const [screen, setScreen] = useState('cep');
@@ -23,7 +24,7 @@ function App() {
     setLoading(false);
     setError('');
     setLogradouro('');
-    setResults(null);
+    setResults([]);
     setSelectedCep(null);
   }
 
@@ -38,26 +39,13 @@ function App() {
     }
 
     try {
-      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+      const data = await getCep(cep);
 
-      if (!response.ok) {
-        throw new Error('Erro na API');
-      }
-
-      const data = await response.json();
-
-      if (data.erro) {
-        setError('Nenhum resultado encontrado.');
-        setAdress(null);
-        return;
-      }
-
-      console.log(data);
       setAdress(data);
       setError('');
     } catch (error) {
-      setError('Ocorreu um erro. Tente novamente!');
-      console.log(error);
+      setError(error.message);
+      setAdress(null);
     } finally {
       setLoading(false);
     }
@@ -74,26 +62,17 @@ function App() {
     }
 
     try {
-      const response = await fetch(`https://viacep.com.br/ws/SC/Florianopolis/${logradouro}/json/`);
+      const data = await getLogradouro(
+        'SC',
+        'Florianopolis',
+        logradouro
+      )
 
-      if (!response.ok) {
-        throw new Error('Erro na API');
-      }
-
-      const data = await response.json();
-
-      if (data.length === 0) {
-        setError('Nenhum resultado encontrado.');
-        setResults([]);
-        return;
-      }
-
-      console.log(data);
       setResults(data);
       setError('');
     } catch (error) {
-      setError('Ocorreu um erro. Tente novamente!');
-      console.log(error);
+      setError(error.message);
+      setResults([]);
     } finally {
       setLoading(false);
     }

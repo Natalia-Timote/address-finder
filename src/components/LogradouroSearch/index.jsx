@@ -31,7 +31,7 @@ export default function LogradouroSearch({ logradouro, setLogradouro, handleSear
         )}
       </div>
 
-      {results && (
+      {results.length > 0 && (
         <div className='results'>
           <p>Resultados para Florianópolis - SC</p>
           {results.map((item) => {

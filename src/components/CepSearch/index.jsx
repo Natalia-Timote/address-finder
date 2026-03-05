@@ -24,7 +24,7 @@ export default function CepSearch({ cep, setCep, handleSearchCep, adress, error,
 
             <div className='results'>
                 {adress && (
-                    <Card className='card'>
+                    <Card>
                         <ResultItem data={adress} />
                     </Card>
                 )}
