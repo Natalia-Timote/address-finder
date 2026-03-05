@@ -62,16 +62,20 @@ O projeto aplica:
 * Renderização condicional segura  
 * Uso de key em listas  
 * Reset de estados ao trocar de tela  
-* Código organizado e legível  
+* Código organizado e legível
+
+## 🆕 Atualizações Recentes
+* Separação das telas em componentes independentes
+* Criação de camada de serviço para integração com a API (viacep.service)
+* Organização de pastas por responsabilidade  
+* Refatoração para componentização (Button, Input, Card)
+* Melhoria no tratamento de erros
 
 ## 🚧 Em Desenvolvimento
 
 O projeto ainda será evoluído com:
 
-* Separação das telas em páginas/componentes independentes  
-* Refatoração para componentização (Input, Card, Button, ResultItem)  
 * Melhoria de responsividade  
-* Organização de pastas por responsabilidade  
 * Melhoria visual e refinamento de UX  
 * Possível implementação de testes  
 
