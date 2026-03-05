@@ -65,11 +65,11 @@ O projeto aplica:
 * Código organizado e legível
 
 ## 🆕 Atualizações Recentes
-* Separação das telas em componentes independentes
+* Refatoração da busca por logradouro para permitir consulta dinâmica por UF e cidade
 * Criação de camada de serviço para integração com a API (viacep.service)
-* Organização de pastas por responsabilidade  
+* Separação das telas em componentes independentes
 * Refatoração para componentização (Button, Input, Card)
-* Melhoria no tratamento de erros
+* Organização de pastas por responsabilidade  
 
 ## 🚧 Em Desenvolvimento
 
