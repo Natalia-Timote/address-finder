@@ -8,7 +8,7 @@ export default function CepSearch({ cep, setCep, handleSearchCep, address, error
     return (
         <section className='cep'>
             <h2>Buscar endereço via CEP</h2>
-            <form onSubmit={(e) => {
+            <form className='form-cep' onSubmit={(e) => {
                 e.preventDefault();
                 handleSearchCep();
             }}>
@@ -24,7 +24,7 @@ export default function CepSearch({ cep, setCep, handleSearchCep, address, error
 
             <div className='results'>
                 {address && (
-                    <Card>
+                    <Card className='card-selected'>
                         <ResultItem data={address} />
                     </Card>
                 )}

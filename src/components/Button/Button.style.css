@@ -1,6 +1,6 @@
 button {
     padding: 8px 16px;
-    border-radius: 16px;
+    border-radius: 8px;
     border: none;
     background-color: #2563EB;
     color: #fff;
@@ -9,9 +9,4 @@ button {
 
 button:hover {
     background-color: #1D4ED8;
-}
-
-.button-search {
-    border-radius: 0 16px 16px 0;
-    border: solid 1px #1D4ED8;
 }

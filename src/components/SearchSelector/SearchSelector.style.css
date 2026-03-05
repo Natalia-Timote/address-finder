@@ -9,3 +9,9 @@
     width: 160px;
     height: 160px;
 }
+
+.screen-buttons {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+}

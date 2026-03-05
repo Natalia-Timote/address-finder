@@ -14,6 +14,8 @@ function App() {
   const [error, setError] = useState('');
 
   const [street, setStreet] = useState('');
+  const [uf, setUf] = useState('');
+  const [city, setCity] = useState('');
   const [results, setResults] = useState([]);
   const [selectedCep, setSelectedCep] = useState(null);
 
@@ -24,6 +26,8 @@ function App() {
     setLoading(false);
     setError('');
     setStreet('');
+    setUf('');
+    setCity('');
     setResults([]);
     setSelectedCep(null);
   }
@@ -55,6 +59,18 @@ function App() {
     setLoading(true);
     setSelectedCep(null);
 
+    if (uf.length !== 2) {
+      setError('Estado deve conter somente 2 caracteres.');
+      setLoading(false);
+      return;
+    }
+
+    if (city.trim().length < 3) {
+      setError('Digite uma cidade válida.');
+      setLoading(false);
+      return;
+    }
+
     if (street.trim().length < 3) {
       setError('Digite pelo menos 3 caracteres.');
       setLoading(false);
@@ -63,8 +79,8 @@ function App() {
 
     try {
       const data = await getStreet(
-        'SC',
-        'Florianopolis',
+        uf.toUpperCase(),
+        city,
         street
       )
 
@@ -96,6 +112,10 @@ function App() {
 
       {screen === 'street' &&
         <StreetSearch
+          uf={uf}
+          setUf={setUf}
+          city={city}
+          setCity={setCity}
           street={street}
           setStreet={setStreet}
           handleSearchStreet={handleSearchStreet}

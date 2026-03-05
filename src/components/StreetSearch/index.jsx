@@ -4,22 +4,41 @@ import Input from '../Input';
 import ResultItem from '../ResultItem';
 import './StreetSearch.style.css';
 
-export default function StreetSearch({ street, setStreet, handleSearchStreet, results, selectedCep, setSelectedCep, error, setError, loading }) {
+export default function StreetSearch({ uf, setUf, city, setCity, street, setStreet, handleSearchStreet, results, selectedCep, setSelectedCep, error, setError, loading }) {
   return (
     <section className='street'>
       <h2>Buscar CEP via logradouro</h2>
-      <form onSubmit={(e) => {
+      <form className='form-street' onSubmit={(e) => {
         e.preventDefault();
         handleSearchStreet();
       }}>
         <Input
-          placeholder='Insira o logradouro'
+          placeholder='Logradouro'
           value={street}
           onChange={(e) => {
             setStreet(e.target.value);
             setError('');
           }}
         />
+        <Input
+          placeholder='Cidade'
+          value={city}
+          onChange={(e) => {
+            setCity(e.target.value);
+            setError('');
+          }}
+        />
+        <Input
+          placeholder='UF (ex: SP)'
+          value={uf}
+          maxLength={2}
+          style={{ textTransform: 'uppercase' }}
+          onChange={(e) => {
+            setUf(e.target.value);
+            setError('');
+          }}
+        />
+
         <Button className='button-search' type='submit' disabled={loading}>Buscar</Button>
       </form>
 
@@ -31,9 +50,9 @@ export default function StreetSearch({ street, setStreet, handleSearchStreet, re
         )}
       </div>
 
-      <p>Resultados para Florianópolis - SC</p>
       {results.length > 0 && (
         <div className='results'>
+          <p style={{ textTransform: 'uppercase' }}>Resultados para {city} - {uf}</p>
           {results.map((item) => {
             return (
               <Card className={`card ${selectedCep?.cep === item.cep ? 'selected' : ''}`} key={item.cep} onClick={() => setSelectedCep(item)}>
