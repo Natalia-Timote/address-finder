@@ -2,6 +2,7 @@ import Button from '../Button';
 import Card from '../Card';
 import Input from '../Input';
 import ResultItem from '../ResultItem';
+import ResultList from '../ResultList';
 import './StreetSearch.style.css';
 
 export default function StreetSearch({ uf, setUf, city, setCity, street, setStreet, handleSearchStreet, results, selectedCep, setSelectedCep, error, setError, loading }) {
@@ -53,14 +54,11 @@ export default function StreetSearch({ uf, setUf, city, setCity, street, setStre
       {results.length > 0 && (
         <div className='results'>
           <p style={{ textTransform: 'uppercase' }}>Resultados para {city} - {uf}</p>
-          {results.map((item) => {
-            return (
-              <Card className={`card ${selectedCep?.cep === item.cep ? 'selected' : ''}`} key={item.cep} onClick={() => setSelectedCep(item)}>
-                <ResultItem data={item} />
-              </Card>
-            )
-
-          })}
+          <ResultList
+            results={results}
+            selectedCep={selectedCep}
+            setSelectedCep={setSelectedCep}
+          />
         </div>
       )}
 
