@@ -15,6 +15,7 @@ export default function StreetSearch({ uf, setUf, city, setCity, street, setStre
         handleSearchStreet();
       }}>
         <Input
+          type='text'
           placeholder='Logradouro'
           value={street}
           onChange={(e) => {
@@ -23,6 +24,7 @@ export default function StreetSearch({ uf, setUf, city, setCity, street, setStre
           }}
         />
         <Input
+          type='text'
           placeholder='Cidade'
           value={city}
           onChange={(e) => {
@@ -71,7 +73,7 @@ export default function StreetSearch({ uf, setUf, city, setCity, street, setStre
       )}
 
       {error && <p className='error'>{error}</p>}
-      {loading && <p>Carregando...</p>}
+      {loading &&  <div className="spinner"></div>}
     </section>
   )
 }

@@ -35,7 +35,9 @@ function App() {
   async function handleSearchCep() {
     setLoading(true);
 
-    if (!/^\d{8}$/.test(cep)) {
+    const cleanedCep = cep.replace(/\D/g, '');
+
+    if (!/^\d{8}$/.test(cleanedCep)) {
       setAddress(null);
       setLoading(false);
       setError('O CEP precisa conter 8 dígitos. Tente novamente!');
@@ -43,7 +45,7 @@ function App() {
     }
 
     try {
-      const data = await getCep(cep);
+      const data = await getCep(cleanedCep);
 
       setAddress(data);
       setError('');

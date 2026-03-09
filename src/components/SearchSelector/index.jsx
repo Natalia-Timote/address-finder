@@ -5,7 +5,7 @@ export default function SearchSelector({ onChangeScreen }) {
     return (
         <section className='search-selector'>
             <div>
-                <img className='address-logo' src="./address.png" alt="" />
+                <img className='address-logo' src="./address.png" alt="Logo Address Finder" />
                 <h1>Address Finder</h1>
             </div>
             <div className='screen-buttons'>

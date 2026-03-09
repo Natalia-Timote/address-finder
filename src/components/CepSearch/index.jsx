@@ -13,12 +13,21 @@ export default function CepSearch({ cep, setCep, handleSearchCep, address, error
                 handleSearchCep();
             }}>
                 <Input
+                    type='text'
                     placeholder='Insira o CEP'
                     value={cep}
+                    maxLength={9}
                     onChange={(e) => {
-                        setCep(e.target.value);
+                        let value = e.target.value.replace(/\D/g, '');
+
+                        if (value.length > 5) {
+                            value = value.slice(0, 5) + '-' + value.slice(5, 8);
+                        }
+
+                        setCep(value);
                         setError('');
-                    }} />
+                    }}
+                />
                 <Button className='button-search' type='submit' disabled={loading}>Buscar</Button>
             </form>
 
@@ -31,7 +40,7 @@ export default function CepSearch({ cep, setCep, handleSearchCep, address, error
             </div>
 
             {error && <p className='error'>{error}</p>}
-            {loading && <p>Carregando...</p>}
+            {loading &&  <div className="spinner"></div>}
         </section>
     )
 }

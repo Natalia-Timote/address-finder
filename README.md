@@ -70,7 +70,7 @@ O projeto aplica:
 * Separação das telas em componentes independentes
 * Refatoração para componentização (Button, Input, Card)
 * Organização de pastas por responsabilidade  
-* Melhoria de responsividade  
+* Melhoria de responsividade
 
 ## 🚧 Em Desenvolvimento
 
