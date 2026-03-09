@@ -1,13 +1,14 @@
+import CopyField from '../CopyField';
 import './ResultItem.style.css';
 
 export default function ResultItem({ data }) {
     return (
         <>
-            <p>CEP: {data.cep}</p>
-            <p>Endereço: {data.logradouro}</p>
-            <p>Bairro: {data.bairro}</p>
-            <p>Cidade: {data.localidade}</p>
-            <p>Estado: {data.uf}</p>
+            <CopyField label="CEP" value={data.cep} />
+            <CopyField label="Endereço" value={data.logradouro} />
+            <CopyField label="Bairro" value={data.bairro} />
+            <CopyField label="Cidade" value={data.localidade} />
+            <CopyField label="Estado" value={data.uf} />
         </>
     )
 }

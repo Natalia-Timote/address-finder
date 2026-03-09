@@ -1,32 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 main {
-    box-sizing: border-box;
-    min-height: 100vh;
-    background-color: #F8FAFC;
-    color: #0F172A;
-    font-family: "Inter", sans-serif;
-    text-align: center;
-    padding: 40px;
-    gap: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #F8FAFC;
+  color: #0F172A;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  padding: 40px;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .results-container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 40px auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 320px));
-    gap: 16px;
-    justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 320px));
+  gap: 16px;
+  justify-content: center;
 }
 
 .error {
-    color: #DC2626;
+  color: #DC2626;
 }
 
 .spinner {

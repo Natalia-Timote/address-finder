@@ -10,7 +10,7 @@ O projeto simula um pequeno sistema de consulta de CEPs, aplicando conceitos fun
 A aplicação possui duas funcionalidades principais:
 
 * Buscar endereço a partir de um CEP  
-* Buscar CEP a partir de um street (cidade fixa: Florianópolis - SC)
+* Buscar CEP a partir de logradouro, cidade e UF
 
 ## 📚 Objetivos do Projeto
 
@@ -26,12 +26,12 @@ A aplicação possui duas funcionalidades principais:
 
 **Busca por CEP**
 - Consulta de endereço via CEP
-- Exibição de street, bairro, cidade e estado
+- Exibição de logradouro, bairro, cidade e estado
 - Validação de CEP
 - Tratamento de erro e loading
 
-**Busca por Street**
-- Consulta de CEP por street (Florianópolis – SC)
+**Busca por Logradouro**
+- Buscar CEP a partir de logradouro, cidade e UF
 - Listagem de resultados
 - Seleção com destaque visual
 - Tratamento de ausência de resultados e erro de API
@@ -75,8 +75,6 @@ O projeto aplica:
 ## 🚧 Em Desenvolvimento
 
 O projeto ainda será evoluído com:
-
-* Melhoria visual e refinamento de UX  
 * Possível implementação de testes  
 
 ## 👩‍💻 Sobre a Autora
