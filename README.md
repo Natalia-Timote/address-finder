@@ -20,13 +20,16 @@ A aplicação possui duas funcionalidades principais:
 * Trabalhar **renderização condicional**
 * Utilizar **.map()** para listagem dinâmica  
 * Aplicar **seleção de item com destaque visual**
-* Organizar layout com CSS moderno  
+* Organizar layout com **CSS responsivo**
+* Aplicar **componentização e reutilização de componentes**
+* Implementar **testes de componentes**
 
 ## 🧩 Funcionalidades
 
 **Busca por CEP**
 - Consulta de endereço via CEP
 - Exibição de logradouro, bairro, cidade e estado
+- Opção de **copiar valores com um clique**
 - Validação de CEP
 - Tratamento de erro e loading
 
@@ -43,6 +46,7 @@ A aplicação possui duas funcionalidades principais:
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="80" height="80"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="80" height="80"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="80" height="80"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitest/vitest-original.svg" width="80" height="80"/>
 </p>
 
 **Tecnologias e conceitos aplicados no projeto:**
@@ -50,7 +54,9 @@ A aplicação possui duas funcionalidades principais:
 * **JavaScript (ES6+)**  
 * **CSS**  
 * **API ViaCEP**  
-* **Git & GitHub**  
+* **Vitest**
+* **React Testing Library**
+* **Git & GitHub**
 
 ## 🔐 Boas Práticas
 
@@ -61,23 +67,11 @@ O projeto aplica:
 * Verificação de response.ok  
 * Renderização condicional segura  
 * Uso de key em listas  
-* Reset de estados ao trocar de tela  
+* Reset de estados ao trocar de tela
+* Componentização e reutilização de elementos de interface
+* Separação de responsabilidades (componentes e serviços)
+* Testes de componentes para validação de comportamento
 * Código organizado e legível
-
-## 🆕 Atualizações Recentes
-* Adicionado componente reutilizável para copiar valores com um clique
-* Tooltip com feedback visual ("Copiar" / "Copiado!")
-* Refatoração da busca por logradouro para permitir consulta dinâmica por UF e cidade
-* Criação de camada de serviço para integração com a API (viacep.service)
-* Separação das telas em componentes independentes
-* Refatoração para componentização (Button, Input, Card)
-* Organização de pastas por responsabilidade  
-* Melhoria de responsividade
-
-## 🚧 Em Desenvolvimento
-
-O projeto ainda será evoluído com:
-* Possível implementação de testes  
 
 ## 👩‍💻 Sobre a Autora
 
