@@ -1,7 +1,7 @@
 ## 🗺️ Address Finder
 
 **Address Finder** é uma aplicação Front-End desenvolvida em **React**, que consome a API pública **ViaCEP** para busca de endereços e códigos postais.
-O projeto simula um pequeno sistema de consulta de CEPs, aplicando conceitos fundamentais de consumo de API, gerenciamento de estado e organização de interface.
+O projeto simula um pequeno sistema de consulta de CEPs, aplicando conceitos fundamentais de **consumo de API, gerenciamento de estado, componentização e organização de interface**, além de boas práticas como **validação de dados, tratamento de erros e testes de componentes**.
 
 <hr>
 
@@ -11,6 +11,8 @@ A aplicação possui duas funcionalidades principais:
 
 * Buscar endereço a partir de um CEP  
 * Buscar CEP a partir de logradouro, cidade e UF
+
+Após a busca, os dados retornados podem ser **copiados facilmente com um clique**, facilitando o uso das informações encontradas.
 
 ## 📚 Objetivos do Projeto
 
